@@ -22,5 +22,11 @@
                 "path": "./snippets/snippets.code-snippets"
             }
         ]
+    },
+    "devDependencies": {
+        "vsce": "^1.99.0"
+    },
+    "scripts": {
+        "deploy": "vsce publish"
     }
 }
