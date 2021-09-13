@@ -1,0 +1,129 @@
+{
+    "Module": {
+        "prefix": "!module",
+        "body": [
+            "#include \"plugin.hpp\"",
+            "struct ${1:slug} : Module",
+            "{",
+            "   enum ParamIds",
+            "   {",
+            "        NUM_PARAMS",
+            "    };",
+            "",
+            "    enum InputIds",
+            "    {",
+            "        NUM_INPUTS",
+            "    };",
+            "",
+            "    enum OutputIds",
+            "    {",
+            "        NUM_OUTPUTS",
+            "    };",
+            "",
+            "    enum LightIds",
+            "    {",
+            "        NUM_LIGHTS",
+            "    };",
+            "",
+            "    ${1:slug}()",
+            "    {",
+            "        config(NUM_PARAMS, NUM_INPUTS, NUM_OUTPUTS, NUM_LIGHTS);",
+            "    }",
+            "",
+            "    void process(const ProcessArgs &args) override",
+            "    {        ",
+            "    }",
+            "};",
+            "",
+            "struct ${1:slug}Widget : ModuleWidget",
+            "{",
+            "    ${1:slug}Widget(${1:slug} *module)",
+            "    {",
+            "        setModule(module);",
+            "        setPanel(APP->window->loadSvg(asset::plugin(pluginInstance, \"res/${1:slug}.svg\")));",
+            "    }",
+            "};",
+            "",
+            "Model *model${1:slug} = createModel<${1:slug}, ${1:slug}Widget>(\"${1:slug}\");"
+        ]
+    },
+    "Config param": {
+        "prefix": "!config",
+        "body": "configParam(${1:param}, ${2:minvalue}, ${3:maxvalue}, ${4:defaultvalue}, \"${5:label}\");"
+    },
+    "JSON": {
+        "prefix": "!json",
+        "body": [
+            "json_t *dataToJson() override {}",
+            "void dataFromJson(json_t *rootJ) override {}"
+        ]
+    },
+    // input
+    "Input get voltage": {
+        "prefix": "!igetvoltage",
+        "body": "inputs[${1:input}].getVoltage($2);"
+    },
+    "Input get voltages": {
+        "prefix": "!igetvoltages",
+        "body": "inputs[${1:input}].getVoltages($2);"
+    },
+    "Input get channels": {
+        "prefix": "!igetchannels",
+        "body": "inputs[${1:input}].getChannels();"
+    },
+    //params
+    "Param get value": {
+        "prefix": "!pgetvalue",
+        "body": "params[${1:param}].getValue();"
+    },
+    "Param set value": {
+        "prefix": "!psetvalue",
+        "body": "params[${1:param}].setValue($2);"
+    },
+    // output
+    "Output set voltage": {
+        "prefix": "!osetvoltage",
+        "body": "outputs[${1:output}].setVoltage($2, $3);"
+    },
+    "Output set channels": {
+        "prefix": "!osetchannels",
+        "body": "outputs[${1:output}].setChannels($2);"
+    },
+    // widgets
+    "Add input": {
+        "prefix": "!winput",
+        "body": "addInput(createInputCentered<${1:widget}>(Vec($2, $3), module, ${4:input}));"
+    },
+    "Add param": {
+        "prefix": "!wparam",
+        "body": "addParam(createParamCentered<${1:widget}>(Vec($2, $3), module, ${4:param}));"
+    },
+    "Add output": {
+        "prefix": "!woutput",
+        "body": "addOutput(createOutCentered<${1:widget}>(Vec($2, $3), module, ${4:output}));"
+    },
+    "Add widget": {
+        "prefix": "!widget",
+        "body": "addChild(createWidget<${1:widget}>(Vec(Vec($2, $3)));"
+    },
+    // plugin
+    "Initialize module": {
+        "prefix": "!addmodel",
+        "body": "p->addModel(model${1:slug});"
+    },
+    "Declare module": {
+        "prefix": "!externmodel",
+        "body": "extern Model* model${1:slug};"
+    },
+    "Plugin info": {
+        "prefix": "!info",
+        "body": [
+            "{",
+            "  \"slug\": \"${1:slug}\",",
+            "  \"name\": \"${2:name}\",",
+            "  \"description\": \"${3:description}\",",
+            "  \"tags\": [${4:tags}]",
+            "}"
+        ]
+    }
+}

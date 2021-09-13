@@ -1,0 +1,26 @@
+{
+    "name": "rack-snippets",
+    "displayName": "Rack snippets",
+    "description": "Code snippets for VCV Rack module development",
+    "version": "1.0.0",
+    "publisher": "Lyqst",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lyqst/vscode-rack-snippets"
+    },
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "cpp",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
