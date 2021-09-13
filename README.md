@@ -1,6 +1,6 @@
-# vcv-rack-snippets
+# Rack snippets
 
-Visual Studio Code snippets for VCV Rack module development .
+Code snippets for VCV Rack module development.
 
 ## Snippet list
 
