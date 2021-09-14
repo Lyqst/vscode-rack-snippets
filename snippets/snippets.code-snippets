@@ -100,7 +100,7 @@
     },
     "Add output": {
         "prefix": "!woutput",
-        "body": "addOutput(createOutCentered<${1:widget}>(Vec($2, $3), module, ${4:output}));"
+        "body": "addOutput(createOutputCentered<${1:widget}>(Vec($2, $3), module, ${4:output}));"
     },
     "Add widget": {
         "prefix": "!widget",
@@ -114,16 +114,5 @@
     "Declare module": {
         "prefix": "!externmodel",
         "body": "extern Model* model${1:slug};"
-    },
-    "Plugin info": {
-        "prefix": "!info",
-        "body": [
-            "{",
-            "  \"slug\": \"${1:slug}\",",
-            "  \"name\": \"${2:name}\",",
-            "  \"description\": \"${3:description}\",",
-            "  \"tags\": [${4:tags}]",
-            "}"
-        ]
     }
 }

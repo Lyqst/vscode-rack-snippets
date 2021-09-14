@@ -1,0 +1,13 @@
+{
+    "Plugin info": {
+        "prefix": "!info",
+        "body": [
+            "{",
+            "  \"slug\": \"${1:slug}\",",
+            "  \"name\": \"${2:name}\",",
+            "  \"description\": \"${3:description}\",",
+            "  \"tags\": [\"${4:tags}\"]",
+            "}"
+        ]
+    }
+}

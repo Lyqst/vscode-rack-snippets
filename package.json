@@ -2,7 +2,7 @@
     "name": "rack-snippets",
     "displayName": "Rack snippets",
     "description": "Code snippets for VCV Rack module development",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "Lyqst",
     "license": "SEE LICENSE IN LICENSE.md",
     "repository": {
@@ -20,6 +20,10 @@
             {
                 "language": "cpp",
                 "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "json",
+                "path": "./snippets/snippets-json.code-snippets"
             }
         ]
     },
