@@ -104,7 +104,7 @@
     },
     "Add widget": {
         "prefix": "!widget",
-        "body": "addChild(createWidget<${1:widget}>(Vec(Vec($2, $3)));"
+        "body": "addChild(createWidget<${1:widget}>(Vec($2, $3));"
     },
     // plugin
     "Initialize module": {
